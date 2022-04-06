@@ -1,0 +1,1 @@
+export const POSTGRE_UNIQ_VIOLATION_CODE = '23505'

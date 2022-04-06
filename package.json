@@ -1,0 +1,53 @@
+{
+  "name": "techlabfze-be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
+    "lint": "eslint . --ext .ts --max-warnings 0",
+    "lint:fix": "yarn lint --fix",
+    "lint:strict": "yarn tsc --noEmit && yarn lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfaour34/TechlabFZE-BE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mfaour34/TechlabFZE-BE/issues"
+  },
+  "homepage": "https://github.com/mfaour34/TechlabFZE-BE#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/logger": "^0.0.1",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^17.0.23",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "concurrently": "^7.1.0",
+    "eslint": "^8.12.0",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@types/jest": "^27.4.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "helmet": "^5.0.2",
+    "jest": "^27.5.1",
+    "jest-extended": "^2.0.0",
+    "jest-junit": "^13.0.0",
+    "jest-watch-typeahead": "^1.0.0",
+    "module-alias": "^2.2.2",
+    "morgan": "^1.10.0",
+    "ts-jest": "^27.1.4"
+  },
+  "_moduleAliases": {
+    "@shared": "dist/modules/shared"
+  }
+}

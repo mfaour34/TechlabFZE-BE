@@ -32,6 +32,7 @@ export const isCached = async (req: any, res: Response, next: NextFunction) => {
         // use the access token to access the Spotify Web API
         const token = body.access_token
         await redisClient.setex('access_token', 3600, token)
+        req.token = token
         next()
       } else {
         res.status(500).json({ error: { msg: 'internal server error' } })

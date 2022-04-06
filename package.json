@@ -54,6 +54,6 @@
   },
   "_moduleAliases": {
     "@shared": "dist/modules/shared",
-    "@artists":"dist/modules/artists"
+    "@artists": "dist/modules/artists"
   }
 }

@@ -6,6 +6,7 @@ import { env } from 'process'
 import morgan from 'morgan'
 import { AccessTokensProvider } from '@shared/types/AccessTokensProvider'
 import { applyHealthCheckRoutes } from './healthCheck/healthCheckRoutes'
+import { applyArtistRoutes } from '@artists/api/artistRoutes'
 import { isCached } from '@shared/utils/isCached'
 
 const HTTP_PORT = parseInt(env.HTTP_PORT as string)
@@ -33,6 +34,7 @@ export const startHttpServer = async (accessTokensProvider: AccessTokensProvider
 
 function applySystemRoutes(app: Application) {
   applyHealthCheckRoutes(app)
+  applyArtistRoutes(app)
 }
 
 // eslint-disable-next-line no-unused-vars

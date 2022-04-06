@@ -1,0 +1,20 @@
+BACKEND REQUIREMENTS
+All api calls from the frontend must go to the NodeJS (express) backend
+The app must not crash if an error is thrown
+Query the spotify data using Spotify's Client Credentials Flow.
+Use a middleware function to obtain client credentials, and store the access token in a redis cache (hint: use the ioredis npm package). It should expire after a reasonable amount of time, and be reused for subsequent hits to the spotify api.
+The backend should contain the following routes to accommodate frontend functionality: 
+/artists
+Every artist search should be saved as a mongodb document. It (the mongodb record) should contain the fields:
+searchText
+artists (array of strings. artists are the results of the spotify API call)
+/artists/uniquesearches
+Refers to the red text above in frontend requirements
+To clarify, the output should have the following:
+Array of Unique searches that match the input
+Array of unique artists associated with the input
+You should add all the artists from every artist search document, and the final result should be an array of unique strings
+By unique, I mean an array with no duplicate
+You must use a single mongodb aggregation query to find the result. 
+/artists/searches
+You must use a single mongodb aggregation query to find the list of unique artists

@@ -10,7 +10,7 @@ export function getClient(): Redis {
 }
 
 export async function connect(): Promise<void> {
-  redisClient = new IORedis()
+  redisClient = new IORedis('redis://redis:6379')
 
   return await new Promise((resolve, reject) => {
     redisClient?.on('ready', () => {
